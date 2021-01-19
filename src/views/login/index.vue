@@ -5,7 +5,6 @@
       <van-field
           v-model="userInfo.mobile"
           name="mobile"
-          type="tel"
           placeholder="请输入用户名"
           :rules="Formrules.mobile">
         <i slot="left-icon" class="iconfont iconshouji"></i>
