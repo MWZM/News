@@ -1,12 +1,36 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/login/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: 'login' },
-  { path: '/login', component: Login }
+  // 设置路由懒加载
+  {
+    path: '/login',
+    component: () => import('@/views/login')
+  },
+  {
+    path: '/',
+    component: () => import('@/views/layout'),
+    children: [
+      {
+        path: '/my',
+        component: () => import('@/views/my')
+      },
+      {
+        path: '/QA',
+        component: () => import('@/views/QA')
+      },
+      {
+        path: '/home',
+        component: () => import('@/views/home')
+      },
+      {
+        path: '/video',
+        component: () => import('@/views/video')
+      }
+    ]
+  }
 ]
 
 const router = new VueRouter({

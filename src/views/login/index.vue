@@ -31,9 +31,9 @@
 <script>
 import { login, SMScode } from '@/api/submit.js'
 export default {
+  name: 'loginIndex',
   data () {
     return {
-      name: 'loginIndex',
       userInfo: {
         mobile: '15611111111',
         code: '246810'
