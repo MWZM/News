@@ -22,7 +22,7 @@ const routes = [
         component: () => import('@/views/QA')
       },
       {
-        path: '/home',
+        path: '',
         component: () => import('@/views/home')
       },
       {

@@ -45,6 +45,7 @@ export default {
     }
   },
   methods: {
+    // 登陆点击按钮
     async onSubmit () {
       this.$toast.loading({
         message: '登陆中...',
@@ -55,6 +56,7 @@ export default {
         this.$toast.success('登陆成功')
         console.log('成功', res.data.data)
         this.$store.commit('setToken', res.data.data)
+        this.$router.push('/my')
       } catch (err) {
         // console.log('登陆失败', err)
         if (err.response.status === 400) {
@@ -64,6 +66,7 @@ export default {
         }
       }
     },
+    // 发送验证码点击按钮
     async CheckCode () {
       // console.log(this.$refs.LoginForm)
       this.$refs.LoginForm.validate('mobile')

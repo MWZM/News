@@ -16,3 +16,11 @@ export const SMScode = (mobile) => {
     url: `/app/v1_0/sms/codes/${mobile}`
   })
 }
+// 用户登录后获取用户信息
+
+export const getUserInfo = () => {
+  return requset({
+    method: 'GET',
+    url: '/app/v1_0/user'
+  })
+}
