@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- 顶部背景图 -->
+    <!-- 这是登陆后的头部 -->
     <div class="van-nav-bar" v-if="$store.state.user">
       <!-- 放头像的盒子 -->
       <div class="login">
@@ -19,12 +20,25 @@
       </div>
       <!-- 用户点赞数和粉丝页 -->
       <div class="userstar">
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
-        <div>123</div>
+        <div class="info">
+          <div>1</div>
+          <div>头条</div>
+        </div>
+        <div class="info">
+          <div>1</div>
+          <div>关注</div>
+        </div>
+        <div class="info">
+          <div>1</div>
+          <div>粉丝</div>
+        </div>
+        <div class="info">
+          <div>1</div>
+          <div>获赞</div>
+        </div>
       </div>
     </div>
+    <!-- 这是未登陆的盒子 -->
     <div class="van-nav-bar" v-else>
       <div class="notLogin">
         <div class="header" @click="login=$router.push('/login')">
@@ -34,13 +48,15 @@
       </div>
     </div>
       <van-grid :column-num="2">
-        <van-grid-item  text="文字" />
-        <van-grid-item  text="文字" />
+        <van-grid-item  text="收藏" icon='star-o' class="star"/>
+        <van-grid-item  text="历史" icon='clock-o' class="history"/>
       </van-grid>
+      <!-- 消息通知和小智头同学部分 -->
     <div class="van-bar">
       <van-cell title="消息通知" />
       <van-cell title="小智同学" />
     </div>
+    <!-- 退出登录按钮，这也是进行按需渲染的 -->
     <div class="logout" @click="logout" v-if="$store.state.user">退出登录</div>
   </div>
 </template>
@@ -93,8 +109,12 @@ export default {
   .userstar {
     display: flex;
     height: 130px;
-    background-color: aqua;
+    align-items: center;
     justify-content: space-around;
+    .info {
+      color: #ffffff;
+      font-size: 30px;
+    }
   }
 }
 .notLogin {
@@ -157,5 +177,11 @@ export default {
   margin-top: 15px;
   background-color: #ffffff;
   color: #D86262;
+}
+.star {
+  color: #EB5253;
+}
+.history {
+  color: #FF9D1D;
 }
 </style>
