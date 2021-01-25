@@ -5,6 +5,15 @@ import requset from '../utils/request.js'
 export const getChannels = () => {
   return requset({
     method: 'GET',
+    url: '/app/v1_0/user/channels'
+  })
+}
+
+// 获取全部频道列表
+
+export const getAllChannels = () => {
+  return requset({
+    method: 'GET',
     url: '/app/v1_0/channels'
   })
 }

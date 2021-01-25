@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="login-head">登录</div>
+    <div class="login-head">
+      <van-icon name="arrow-left" class="icon" @click="back"/>登录</div>
     <van-form @submit="onSubmit" ref="LoginForm">
       <van-field
           v-model="userInfo.mobile"
@@ -34,7 +35,7 @@ export default {
   data () {
     return {
       userInfo: {
-        mobile: '15611111111',
+        mobile: '13619219935',
         code: '246810'
       },
       Formrules: {
@@ -83,6 +84,9 @@ export default {
           return this.$toast.fail('发送失败，请稍后重试')
         }
       }
+    },
+    back () {
+      this.$router.go(-1)
     }
   }
 }
@@ -97,6 +101,11 @@ export default {
   text-align: center;
   line-height: 130px;
   font-size: 32px;
+  .icon {
+    position: absolute;
+    left: 20px;
+    top: 50px;
+  }
 }
 .iconfont {
   font-size: 32px;

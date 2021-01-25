@@ -6,7 +6,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 import './style/global.less'
 import 'amfe-flexible'
-import './components/day'
+import './utils/day'
 
 Vue.use(Vant)
 Vue.config.productionTip = false

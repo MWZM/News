@@ -6,6 +6,7 @@
       size="small"
       round
       icon="search"
+      to="/search"
       >搜索</van-button>
     </div>
 
@@ -19,24 +20,27 @@
       </div>
     </van-tabs>
     <!-- 点击右侧汉堡按钮展示的弹出层 -->
-    <van-cell is-link>展示弹出层</van-cell>
     <van-popup
     v-model="show"
     position="right"
     :style="{ height: '100%', width: '100%' }"
     closeable
     close-icon-position="top-left"
-    ></van-popup>
+    >
+    <SelectChannel></SelectChannel>
+    </van-popup>
   </div>
 </template>
 
 <script>
 import { getChannels } from '@/api/my.js'
 import Articlelist from '../home/Articlelist/article-list'
+import SelectChannel from '../../components/SelectChannel'
 export default {
   name: 'homeIndex',
   components: {
-    Articlelist
+    Articlelist,
+    SelectChannel
   },
   data () {
     return {

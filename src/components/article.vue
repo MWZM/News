@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import '../components/day'
+import '../utils/day'
 export default {
   name: 'ArticleIndex',
   props: {
