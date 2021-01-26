@@ -2,7 +2,7 @@
   <div>
     <!-- 渲染没有图片的文章 -->
     <van-cell-group v-if="articleList.cover.type===0" class="typezero">
-      <van-cell :title="articleList.title" class="van-multi-ellipsis--l2">
+      <van-cell :title="articleList.title" class="van-multi-ellipsis--l2" :to="`/article/${articleList.art_id}`">
         <!-- 设置下方描述信息 -->
         <div slot="label">
           <span class="text">{{articleList.aut_name}}</span>
@@ -13,7 +13,7 @@
     </van-cell-group>
     <!-- 渲染只有一张图片的文章 -->
     <van-cell-group v-if="articleList.cover.type===1" class="typeone">
-      <van-cell :title="articleList.title" class="van-multi-ellipsis--l2">
+      <van-cell :title="articleList.title" class="van-multi-ellipsis--l2" :to="`/article/${articleList.art_id}`">
         <!-- 设置插槽，插入右侧图片 -->
         <div slot="default" class="imgsbox">
           <van-image :src="articleList.cover.images[0]" class="img" />
@@ -27,7 +27,7 @@
     </van-cell-group>
     <!-- 渲染有三张图片的文章 -->
     <van-cell-group v-if="articleList.cover.type===3" class="typethree">
-      <van-cell :title="articleList.title" class="van-multi-ellipsis--l2">
+      <van-cell :title="articleList.title" class="van-multi-ellipsis--l2" :to="`/article/${articleList.art_id}`">
         <!-- 设置三张图片的插槽 -->
         <div slot="label" class="imgbox">
           <van-image
