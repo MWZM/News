@@ -156,10 +156,10 @@ export default {
     async follow () {
       try {
         if (this.article.is_followed) {
-          const { data } = await Delfollow(this.article.art_id)
+          const { data } = await Delfollow(this.article.aut_id)
           console.log(data)
         } else {
-          const { data } = await Addfollow(this.article.art_id)
+          const { data } = await Addfollow(this.article.aut_id)
           console.log(data)
         }
       } catch (err) {
